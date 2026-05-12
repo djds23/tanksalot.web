@@ -5,8 +5,8 @@ description: Support and FAQ for the tanksalot iOS app.
 permalink: /support/
 ---
 
-<div class="page">
-<div class="container">
+<div class="page" markdown="1">
+<div class="container" markdown="1">
 
 # Support
 

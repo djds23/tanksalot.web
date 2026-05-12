@@ -5,8 +5,8 @@ description: Privacy policy for the tanksalot iOS app.
 permalink: /privacy/
 ---
 
-<div class="page">
-<div class="container">
+<div class="page" markdown="1">
+<div class="container" markdown="1">
 
 # Privacy Policy
 
