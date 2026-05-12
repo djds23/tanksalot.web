@@ -1,0 +1,26 @@
+title: tanksalot
+tagline: Portable oxygen tank tracking for caregivers.
+description: >-
+  tanksalot keeps tabs on portable oxygen tanks at home, so caregivers
+  always know what's full, what's empty, and how long the active tank
+  will last.
+email: dean.silfen@gmail.com
+baseurl: "/tanksalot.web"
+url: "https://djds23.github.io"
+
+brand_color: "#1f9d55"
+brand_color_dark: "#157347"
+
+contact_email: dean.silfen@gmail.com
+testflight_url: "#"
+
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+
+plugins: []
