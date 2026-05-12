@@ -1,8 +1,23 @@
+# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Ruby / Bundler
 .bundle/
 vendor/
 Gemfile.lock
+
+# macOS
 .DS_Store
+._*
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Claude Code
+.claude/
