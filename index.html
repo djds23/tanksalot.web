@@ -19,13 +19,17 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
       </div>
     </div>
     <div class="hero-art">
-      <div class="phone-frame" aria-hidden="true">
-        <div class="phone-screen">
-          <div class="ring">62%</div>
-          <div><strong>Green #1</strong></div>
-          <small>1h 48m remaining · 2.0 LPM</small>
-        </div>
-      </div>
+      <picture>
+        <source
+          srcset="{{ '/assets/icons/exports/tanksalot-icon-iOS-Dark-256x256@2x.png' | relative_url }}"
+          media="(prefers-color-scheme: dark)">
+        <img
+          class="hero-icon"
+          src="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-256x256@2x.png' | relative_url }}"
+          alt="tanksalot app icon"
+          width="240"
+          height="240">
+      </picture>
     </div>
   </div>
 </section>

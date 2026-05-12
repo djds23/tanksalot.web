@@ -6,16 +6,24 @@
   <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-  <link rel="icon" href="{{ '/assets/icon.png' | relative_url }}" type="image/png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-32x32@2x.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-16x16@2x.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="{{ '/assets/icons/exports/tanksalot-icon-iOS-Dark-32x32@2x.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-60x60@3x.png' | relative_url }}">
   <meta property="og:title" content="{{ site.title }} — {{ site.tagline }}">
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-512x512@1x.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="{{ '/' | relative_url }}">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <picture>
+          <source srcset="{{ '/assets/icons/exports/tanksalot-icon-iOS-Dark-32x32@2x.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+          <img class="brand-mark" src="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-32x32@2x.png' | relative_url }}" alt="" width="28" height="28">
+        </picture>
         <span class="brand-name">tanksalot</span>
       </a>
       <nav class="site-nav">
