@@ -1,14 +1,32 @@
 :root {
   --brand: #1f9d55;
   --brand-dark: #157347;
+  --brand-strong: #157347;
   --brand-tint: #e8f6ee;
   --ink: #1a1f24;
   --ink-soft: #4a5560;
   --paper: #ffffff;
   --rule: #e3e7eb;
   --bg: #fafbfc;
+  --shadow-hero: 0 24px 50px rgba(31,157,85,0.22), 0 4px 12px rgba(0,0,0,0.08);
   --max-width: 1040px;
   --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #3ec77a;
+    --brand-dark: #5cd693;
+    --brand-strong: #2bbf6e;
+    --brand-tint: #122a1d;
+    --ink: #e8ecef;
+    --ink-soft: #97a3ad;
+    --paper: #161a1f;
+    --rule: #262b32;
+    --bg: #0e1115;
+    --shadow-hero: 0 24px 50px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.4);
+    color-scheme: dark;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -31,6 +49,8 @@ html, body {
 
 a { color: var(--brand-dark); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+img { max-width: 100%; }
 
 h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0 0 0.5em; }
 h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
@@ -98,19 +118,19 @@ p { margin: 0 0 1em; }
 .btn {
   display: inline-block;
   background: var(--brand);
-  color: white;
+  color: #0e1115;
   padding: 12px 22px;
   border-radius: var(--radius);
   font-weight: 600;
   font-size: 1rem;
 }
-.btn:hover { background: var(--brand-dark); text-decoration: none; color: white; }
+.btn:hover { background: var(--brand-strong); text-decoration: none; color: #0e1115; }
 .btn-secondary {
   background: transparent;
-  color: var(--brand-dark);
-  border: 1px solid var(--brand-dark);
+  color: var(--brand);
+  border: 1px solid var(--brand);
 }
-.btn-secondary:hover { background: var(--brand-tint); color: var(--brand-dark); }
+.btn-secondary:hover { background: var(--brand-tint); color: var(--brand); }
 
 .hero-art {
   display: flex;
@@ -118,11 +138,10 @@ p { margin: 0 0 1em; }
 }
 .hero-icon {
   width: 240px;
-  height: 240px;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   border-radius: 44px;
-  box-shadow: 0 24px 50px rgba(31,157,85,0.22), 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-hero);
 }
 
 /* Sections */
@@ -154,7 +173,7 @@ section.alt { background: var(--paper); border-top: 1px solid var(--rule); borde
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-dark);
+  color: var(--brand);
   font-size: 0.9rem;
   margin-bottom: 16px;
   text-align: center;
