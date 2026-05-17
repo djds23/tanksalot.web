@@ -46,7 +46,16 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
 
     <div class="feature-grid">
       <div class="feature">
-        <div class="shot">Lock screen + Dynamic Island screenshot</div>
+        <div class="shot">
+          <picture>
+            <source
+              srcset="{{ '/assets/lock-screen-live-activity-dark.png' | relative_url }}"
+              media="(prefers-color-scheme: dark)">
+            <img
+              src="{{ '/assets/lock-screen-live-activity-light.png' | relative_url }}"
+              alt="Lock screen showing the tanksalot Live Activity with a countdown ring">
+          </picture>
+        </div>
         <h3>Live Activity countdown</h3>
         <p>
           Once a session is running, iOS keeps a live countdown front-and-center — lock
@@ -57,7 +66,16 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
       </div>
 
       <div class="feature">
-        <div class="shot">Home-screen widgets (small / medium / large)</div>
+        <div class="shot">
+          <picture>
+            <source
+              srcset="{{ '/assets/dynamic-island-dark.png' | relative_url }}"
+              media="(prefers-color-scheme: dark)">
+            <img
+              src="{{ '/assets/dynamic-island-light.png' | relative_url }}"
+              alt="Dynamic Island showing the tanksalot live countdown">
+          </picture>
+        </div>
         <h3>Home-screen widgets</h3>
         <p>
           Small and medium widgets show the default tank's remaining percent and a one-tap
@@ -68,7 +86,16 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
       </div>
 
       <div class="feature">
-        <div class="shot">Inventory list with mixed-status tanks</div>
+        <div class="shot">
+          <picture>
+            <source
+              srcset="{{ '/assets/inventory-dark.png' | relative_url }}"
+              media="(prefers-color-scheme: dark)">
+            <img
+              src="{{ '/assets/inventory-light.png' | relative_url }}"
+              alt="Inventory list showing tanks with mixed statuses">
+          </picture>
+        </div>
         <h3>Multi-tank inventory</h3>
         <p>
           Track as many tanks as you own. Each has a size (M2 / M4 / M6 / M9 / D / E /
@@ -78,7 +105,16 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
       </div>
 
       <div class="feature">
-        <div class="shot">Start-session sheet with flow presets</div>
+        <div class="shot">
+          <picture>
+            <source
+              srcset="{{ '/assets/start-session-dark.png' | relative_url }}"
+              media="(prefers-color-scheme: dark)">
+            <img
+              src="{{ '/assets/start-session-light.png' | relative_url }}"
+              alt="Start-session sheet with flow rate presets">
+          </picture>
+        </div>
         <h3>Custom sizes and flow presets</h3>
         <p>
           Ships with the common M-series and steel cylinder capacities. Settings lets you

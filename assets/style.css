@@ -166,20 +166,24 @@ section.alt { background: var(--paper); border-top: 1px solid var(--rule); borde
 }
 .feature h3 { margin-top: 0; }
 .feature .shot {
-  background: var(--brand-tint);
-  border: 1px dashed var(--brand);
+  background: var(--bg);
   border-radius: 8px;
-  aspect-ratio: 16 / 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand);
-  font-size: 0.9rem;
   margin-bottom: 16px;
-  text-align: center;
-  padding: 12px;
+  padding: 16px;
+  overflow: hidden;
 }
-.feature .shot img { max-width: 100%; max-height: 100%; border-radius: 6px; }
+.feature .shot picture { display: contents; }
+.feature .shot img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
 
 .blurb-list {
   display: grid;
