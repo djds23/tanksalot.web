@@ -13,6 +13,9 @@ Gemfile.lock
 .DS_Store
 ._*
 
+# Node (image tooling)
+node_modules/
+
 # Editors
 .idea/
 .vscode/

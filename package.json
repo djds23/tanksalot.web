@@ -1,0 +1,13 @@
+{
+  "name": "tanksalot-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Image optimization tooling for the tanksalot marketing site",
+  "type": "module",
+  "scripts": {
+    "optimize": "node bin/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

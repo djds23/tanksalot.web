@@ -12,6 +12,9 @@ Published via GitHub Pages from `main` branch root: <https://djds23.github.io/ta
 - `_layouts/default.html` — single shared layout
 - `assets/style.css` — minimal hand-written CSS, brand green
 - `_config.yml` — site config
+- `_screenshot-src/` — full-res screenshot masters (not deployed; source for the
+  optimized images the site serves)
+- `bin/optimize-images.mjs` — regenerates the served WebP/JPEG/PNG from the masters
 
 ## Local preview
 
@@ -27,11 +30,33 @@ Then open <http://127.0.0.1:4000/tanksalot.web/>.
 GitHub Pages auto-builds on push to `main`. Enable Pages in repo settings:
 **Settings → Pages → Source: Deploy from a branch → `main` / root**.
 
-## Adding screenshots
+## Images
 
-Drop PNGs into `assets/screenshots/` and replace the dashed placeholders in
-`index.html` (look for `class="shot"`) with `<img>` tags pointing at the new
-files.
+The page is mostly screenshots, so they're optimized aggressively. Full-res
+simulator exports live in `_screenshot-src/` (underscore-prefixed, so Jekyll
+never deploys them). The site serves resized **WebP** with a JPEG/PNG fallback,
+generated from those masters and committed under `assets/`.
+
+GitHub Pages runs Jekyll only — it can't run the optimizer — so the generated
+images are committed, not built on deploy.
+
+### Adding or replacing a screenshot
+
+1. Drop the full-res PNG into `_screenshot-src/` as `<name>-light.png` /
+   `<name>-dark.png`.
+2. Add it to the `SHOTS` list in `bin/optimize-images.mjs`.
+3. Regenerate and commit the outputs:
+
+   ```sh
+   npm install        # one-time; installs sharp (devDependency, git-ignored)
+   npm run optimize   # writes assets/<name>-<scheme>.webp + .jpg
+   ```
+
+4. Add a `<picture>` block in `index.html` (copy an existing `class="shot"`
+   block): WebP `<source>` first, then a JPEG/PNG fallback, then the `<img>`.
+
+The hero app icon follows the same pattern (`hero-icon-*`), sourced from the
+512×512 icon masters in `assets/icons/exports/`.
 
 ## Things tracked elsewhere
 
