@@ -8,7 +8,7 @@
   --paper: #ffffff;
   --rule: #e3e7eb;
   --bg: #fafbfc;
-  --shadow-hero: 0 24px 50px rgba(31,157,85,0.22), 0 4px 12px rgba(0,0,0,0.08);
+  --hero-shadow: drop-shadow(0 24px 50px rgba(31,157,85,0.22)) drop-shadow(0 4px 12px rgba(0,0,0,0.08));
   --max-width: 1040px;
   --radius: 10px;
 }
@@ -24,7 +24,7 @@
     --paper: #161a1f;
     --rule: #262b32;
     --bg: #0e1115;
-    --shadow-hero: 0 24px 50px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.4);
+    --hero-shadow: drop-shadow(0 24px 50px rgba(0,0,0,0.55)) drop-shadow(0 4px 12px rgba(0,0,0,0.4));
     color-scheme: dark;
   }
 }
@@ -140,8 +140,9 @@ p { margin: 0 0 1em; }
   width: 240px;
   height: auto;
   max-width: 100%;
-  border-radius: 44px;
-  box-shadow: var(--shadow-hero);
+  /* drop-shadow follows the icon's alpha squircle; box-shadow would trace the
+     square border-box and leave mismatched rounded-rect corners. */
+  filter: var(--hero-shadow);
 }
 
 /* Sections */
