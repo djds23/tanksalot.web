@@ -1,6 +1,5 @@
 ---
 layout: default
-title: ""
 description: tanksalot keeps tabs on portable oxygen tanks at home, so caregivers always know what's full, what's empty, and how long the active tank will last.
 ---
 
@@ -28,7 +27,9 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
           src="{{ '/assets/icons/exports/tanksalot-icon-iOS-Default-256x256@2x.png' | relative_url }}"
           alt="tanksalot app icon"
           width="240"
-          height="240">
+          height="240"
+          fetchpriority="high"
+          decoding="async">
       </picture>
     </div>
   </div>
@@ -53,7 +54,8 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
               media="(prefers-color-scheme: dark)">
             <img
               src="{{ '/assets/lock-screen-live-activity-light.png' | relative_url }}"
-              alt="Lock screen showing the tanksalot Live Activity with a countdown ring">
+              alt="Lock screen showing the tanksalot Live Activity with a countdown ring"
+              width="1206" height="2622" loading="lazy" decoding="async">
           </picture>
         </div>
         <h3>Live Activity countdown</h3>
@@ -73,7 +75,8 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
               media="(prefers-color-scheme: dark)">
             <img
               src="{{ '/assets/dynamic-island-light.png' | relative_url }}"
-              alt="Dynamic Island showing the tanksalot live countdown">
+              alt="Dynamic Island showing the tanksalot live countdown"
+              width="1206" height="2622" loading="lazy" decoding="async">
           </picture>
         </div>
         <h3>Home-screen widgets</h3>
@@ -93,7 +96,8 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
               media="(prefers-color-scheme: dark)">
             <img
               src="{{ '/assets/inventory-light.png' | relative_url }}"
-              alt="Inventory list showing tanks with mixed statuses">
+              alt="Inventory list showing tanks with mixed statuses"
+              width="1206" height="2622" loading="lazy" decoding="async">
           </picture>
         </div>
         <h3>Multi-tank inventory</h3>
@@ -112,7 +116,8 @@ description: tanksalot keeps tabs on portable oxygen tanks at home, so caregiver
               media="(prefers-color-scheme: dark)">
             <img
               src="{{ '/assets/start-session-light.png' | relative_url }}"
-              alt="Start-session sheet with flow rate presets">
+              alt="Start-session sheet with flow rate presets"
+              width="1206" height="2622" loading="lazy" decoding="async">
           </picture>
         </div>
         <h3>Custom sizes and flow presets</h3>
