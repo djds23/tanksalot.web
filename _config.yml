@@ -1,9 +1,9 @@
 title: tanksalot
 tagline: Portable oxygen tank tracking for you and the people you care for.
 description: >-
-  tanksalot keeps tabs on portable oxygen tanks at home — whether yours or a
-  loved one's — so you always know what's full, what's empty, and how long the
-  active tank will last.
+  tanksalot keeps track of the portable oxygen tanks at home, yours or a loved
+  one's, so you always know what's full, what's empty, and how much is left on
+  the tank in use.
 email: dean.silfen@gmail.com
 baseurl: "/tanksalot.web"
 url: "https://djds23.github.io"
