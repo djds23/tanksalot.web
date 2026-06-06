@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tanksalot",
+  "compatibility_date": "2026-06-06",
+  // Static-assets-only Worker: serve the Jekyll output. No server code.
+  "assets": {
+    "directory": "_site"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

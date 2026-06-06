@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "bundle install && bundle exec jekyll build --config _config.yml,_config.prod.yml",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev",
     "optimize": "node bin/optimize-images.mjs"
   },
   "devDependencies": {
-    "sharp": "^0.34.0"
+    "sharp": "^0.34.0",
+    "wrangler": "^4"
   }
 }

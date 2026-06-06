@@ -16,6 +16,9 @@ Gemfile.lock
 # Node (image tooling)
 node_modules/
 
+# Cloudflare / wrangler local state
+.wrangler/
+
 # Editors
 .idea/
 .vscode/

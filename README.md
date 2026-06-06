@@ -49,6 +49,13 @@ overrides (`baseurl: ""`, `url: https://tanksalot.app`) on top of the base
 config; later `--config` files win. Ruby is pinned by `.ruby-version`; if the
 build image doesn't pick it up, also set a `RUBY_VERSION` build variable.
 
+`wrangler.jsonc` configures the deploy as a static-assets Worker serving
+`_site`. The `deploy` / `preview` npm scripts (`npm run build && wrangler
+deploy` / `… && wrangler dev`) are defined explicitly so wrangler's onboarding
+doesn't auto-generate `npx`-wrapped versions. Build with modern Jekyll 4 (see
+`Gemfile`), not the `github-pages` gem, whose EOL Ruby Sass dependency crashes
+on Ruby 3.3.
+
 Local `jekyll serve` uses `_config.yml`, so it matches staging
 (<http://127.0.0.1:4000/tanksalot.web/>). To preview the production build
 locally: `bundle exec jekyll serve --config _config.yml,_config.prod.yml`.
