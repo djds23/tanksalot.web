@@ -50,6 +50,46 @@ description: tanksalot keeps tabs on portable oxygen tanks at home — whether y
       <div class="feature">
         <div class="shot">
           <picture>
+            <source srcset="{{ '/assets/inventory-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
+            <source srcset="{{ '/assets/inventory-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <source srcset="{{ '/assets/inventory-light.webp' | relative_url }}" type="image/webp">
+            <img
+              src="{{ '/assets/inventory-light.jpg' | relative_url }}"
+              alt="Inventory list showing tanks with mixed statuses"
+              width="471" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <h3>Multi-tank inventory</h3>
+        <p>
+          Track as many tanks as you own. Each has a size (M2 / M4 / M6 / M9 / D / E /
+          custom liters), an optional label, a status (Full / Available / Low / Empty / In
+          Use), and a session history. Filter and sort to surface what's actually usable.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="shot">
+          <picture>
+            <source srcset="{{ '/assets/start-session-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
+            <source srcset="{{ '/assets/start-session-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <source srcset="{{ '/assets/start-session-light.webp' | relative_url }}" type="image/webp">
+            <img
+              src="{{ '/assets/start-session-light.jpg' | relative_url }}"
+              alt="Start-session sheet with flow rate presets"
+              width="471" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <h3>Custom sizes and flow presets</h3>
+        <p>
+          Ships with the common M-series and steel cylinder capacities. Settings lets you
+          add custom tank sizes and custom flow presets — 0.5 LPM, 2 LPM, 5 LPM — so the
+          start-session sheet matches your actual prescription instead of a generic picker.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="shot">
+          <picture>
             <source srcset="{{ '/assets/lock-screen-live-activity-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
             <source srcset="{{ '/assets/lock-screen-live-activity-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
             <source srcset="{{ '/assets/lock-screen-live-activity-light.webp' | relative_url }}" type="image/webp">
@@ -86,46 +126,6 @@ description: tanksalot keeps tabs on portable oxygen tanks at home — whether y
           Start button. The large widget lists the whole inventory with capacity bars.
           During an active session, the widget shows a live countdown that ticks every
           second.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="shot">
-          <picture>
-            <source srcset="{{ '/assets/inventory-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/inventory-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/inventory-light.webp' | relative_url }}" type="image/webp">
-            <img
-              src="{{ '/assets/inventory-light.jpg' | relative_url }}"
-              alt="Inventory list showing tanks with mixed statuses"
-              width="471" height="1024" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <h3>Multi-tank inventory</h3>
-        <p>
-          Track as many tanks as you own. Each has a size (M2 / M4 / M6 / M9 / D / E /
-          custom liters), an optional label, a status (Full / Available / Low / Empty / In
-          Use), and a session history. Filter and sort to surface what's actually usable.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="shot">
-          <picture>
-            <source srcset="{{ '/assets/start-session-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/start-session-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/start-session-light.webp' | relative_url }}" type="image/webp">
-            <img
-              src="{{ '/assets/start-session-light.jpg' | relative_url }}"
-              alt="Start-session sheet with flow rate presets"
-              width="471" height="1024" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <h3>Custom sizes and flow presets</h3>
-        <p>
-          Ships with the common M-series and steel cylinder capacities. Settings lets you
-          add custom tank sizes and custom flow presets — 0.5 LPM, 2 LPM, 5 LPM — so the
-          start-session sheet matches your actual prescription instead of a generic picker.
         </p>
       </div>
     </div>
