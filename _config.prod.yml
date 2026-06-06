@@ -1,0 +1,14 @@
+# Production overrides for the Cloudflare (custom-domain) deploy.
+#
+# Layered on top of _config.yml at build time:
+#   bundle exec jekyll build --config _config.yml,_config.prod.yml
+#
+# Only the keys below differ from staging. GitHub Pages never reads this file
+# (it builds with _config.yml alone), and the leading underscore keeps it out
+# of the generated site.
+
+# Custom domain serves the site at the root, not under /tanksalot.web.
+baseurl: ""
+
+# Drives absolute URLs (og:image, canonical).
+url: "https://tanksalot.app"

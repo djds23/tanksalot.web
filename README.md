@@ -27,8 +27,28 @@ Then open <http://127.0.0.1:4000/tanksalot.web/>.
 
 ## Deploying
 
-GitHub Pages auto-builds on push to `main`. Enable Pages in repo settings:
-**Settings → Pages → Source: Deploy from a branch → `main` / root**.
+The site ships to two places from the same `main` branch:
+
+**Staging — GitHub Pages** (`https://djds23.github.io/tanksalot.web/`)
+Auto-builds on push to `main` with `_config.yml` only. Enable in repo settings:
+**Settings → Pages → Source: Deploy from a branch → `main` / root**. GitHub
+Pages can't take a custom build command or a second config, which is why
+`_config.yml` holds the GitHub Pages settings (`baseurl: /tanksalot.web`).
+
+**Production — Cloudflare Pages** (custom domain at the root)
+Configure the project with:
+
+- **Build command:** `bundle exec jekyll build --config _config.yml,_config.prod.yml`
+- **Build output directory:** `_site`
+
+`_config.prod.yml` layers production overrides (`baseurl: ""`, the real `url`)
+on top of the base config; later `--config` files win. Ruby is pinned by
+`.ruby-version`. If Cloudflare doesn't auto-run `bundle install`, prefix the
+command with `bundle install &&`.
+
+Local `jekyll serve` uses `_config.yml`, so it matches staging
+(<http://127.0.0.1:4000/tanksalot.web/>). To preview the production build
+locally: `bundle exec jekyll serve --config _config.yml,_config.prod.yml`.
 
 ## Images
 
