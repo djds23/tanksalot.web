@@ -14,9 +14,13 @@ Have a question or hit a bug? Email **<a href="mailto:{{ site.contact_email }}">
 
 ## Frequently asked questions
 
-### How is remaining capacity calculated?
+### How is remaining capacity estimated?
 
-Elapsed session time × liters-per-minute, subtracted from the tank's full capacity at the last Fill. No sensors are involved — the math just works as long as you start and end sessions honestly.
+It's an estimate, not a measurement. tanksalot takes the tank's full capacity at the last Fill and subtracts elapsed session time × liters-per-minute. There are no sensors and nothing reads the physical tank, so the estimate is only as accurate as the numbers you enter: the tank size, when you marked it Full, and the start time, end time, and flow rate of each session. Keep those accurate and the estimate stays close; skip a session or fat-finger a flow rate and it will drift.
+
+### Can I rely on the estimate to know when a tank will run out?
+
+No. Treat every number in the app as a planning estimate, not a guarantee. You are responsible for confirming your actual supply, keeping spare tanks on hand, and leaving a safety margin. Real-world factors the app can't see (a slow leak, a regulator left open, a flow rate changed at the device) all affect how long a tank truly lasts. When in doubt, check the tank and follow your clinician's or supplier's guidance.
 
 ### What happens if I forget to end a session?
 

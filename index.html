@@ -1,6 +1,6 @@
 ---
 layout: default
-description: tanksalot keeps track of the portable oxygen tanks at home, yours or a loved one's, so you always know what's full, what's empty, and how much is left on the tank in use.
+description: tanksalot estimates how much oxygen is left in your portable tanks, yours or a loved one's, from the fills and sessions you log, so you can see at a glance what's likely full, what's empty, and about how long the active tank will last.
 ---
 
 <section class="hero">
@@ -8,10 +8,11 @@ description: tanksalot keeps track of the portable oxygen tanks at home, yours o
     <div>
       <h1>Know which tank to grab. At a glance.</h1>
       <p class="pitch">
-        <strong>tanksalot</strong> keeps track of the portable oxygen tanks at home, yours
-        or a loved one's. You always know what's full, what's empty, and how much is left
-        on the tank in use. It works from how you actually use it, so there are no sensors
-        to set up and no guessing.
+        <strong>tanksalot</strong> tracks the portable oxygen tanks at home, yours or a
+        loved one's. It estimates how much is left in each one from the fills and sessions
+        you log, so you can see at a glance what's likely full, what's empty, and about how
+        long the tank in use will last. There are no sensors, so the numbers are only as
+        accurate as the data you keep.
       </p>
       <div class="cta-row">
         <a class="btn" href="{{ site.testflight_url }}">Get on TestFlight</a>
@@ -42,7 +43,8 @@ description: tanksalot keeps track of the portable oxygen tanks at home, yours o
     <p class="section-lead">
       If you manage portable oxygen at home, for yourself or someone you care for, you've
       got a closet of tanks to keep straight: which one to grab next, how long it'll last
-      at the prescribed flow rate, and when to reorder. tanksalot does that math for you.
+      at the prescribed flow rate, and when to reorder. tanksalot keeps a running estimate
+      so you're not doing that math in your head.
     </p>
 
     <div class="feature-grid">
@@ -101,9 +103,9 @@ description: tanksalot keeps track of the portable oxygen tanks at home, yours o
         <h3>Live Activity countdown</h3>
         <p>
           Once a session is running, iOS keeps a live countdown on your lock screen, in the
-          Dynamic Island, and in StandBy. The ring tracks the current tank's remaining
-          percent and the timer counts down to predicted-empty. The activity flips to a red
-          "Replace tank" state automatically when that moment passes.
+          Dynamic Island, and in StandBy. The ring tracks the current tank's estimated
+          remaining percent and the timer counts down to the predicted empty time. The
+          activity flips to a red "Replace tank" state automatically when that moment passes.
         </p>
       </div>
 
@@ -142,9 +144,9 @@ description: tanksalot keeps track of the portable oxygen tanks at home, yours o
         </div>
         <h3>Home-screen widgets</h3>
         <p>
-          Small and medium widgets show the default tank's remaining percent and a one-tap
-          Start button. The large widget lists the whole inventory with capacity bars.
-          During an active session, the widget shows a live countdown that ticks every
+          Small and medium widgets show the default tank's estimated remaining percent and
+          a one-tap Start button. The large widget lists the whole inventory with capacity
+          bars. During an active session, the widget shows a live countdown that ticks every
           second.
         </p>
       </div>
@@ -157,9 +159,15 @@ description: tanksalot keeps track of the portable oxygen tanks at home, yours o
     <h2>And the rest</h2>
     <ul class="blurb-list">
       <li>
-        <strong>Live session, calculated capacity</strong>
-        A session is "tank in use at X LPM until ended." The app shows live remaining
-        liters, percent, and predicted empty time.
+        <strong>Estimates, not measurements</strong>
+        tanksalot can't read your tanks directly. Every number is an estimate based on the
+        sizes, fills, and sessions you enter, so it's only as accurate as that data. Keep it
+        current, keep spares on hand, and check your actual supply before you rely on it.
+      </li>
+      <li>
+        <strong>Live session, estimated capacity</strong>
+        A session is "tank in use at X LPM until ended." From that, the app estimates the
+        remaining liters, percent, and a predicted empty time, updating as the session runs.
       </li>
       <li>
         <strong>Predicted-empty notifications</strong>
