@@ -109,16 +109,37 @@ description: tanksalot keeps tabs on portable oxygen tanks at home — whether y
       </div>
 
       <div class="feature">
-        <div class="shot">
-          <picture>
-            <source srcset="{{ '/assets/dynamic-island-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/dynamic-island-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <source srcset="{{ '/assets/dynamic-island-light.webp' | relative_url }}" type="image/webp">
-            <img
-              src="{{ '/assets/dynamic-island-light.jpg' | relative_url }}"
-              alt="Dynamic Island showing the tanksalot live countdown"
-              width="471" height="1024" loading="lazy" decoding="async">
-          </picture>
+        <div class="shot-carousel">
+          <div class="carousel" aria-roledescription="carousel" aria-label="tanksalot home-screen widgets">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <picture>
+                  <source srcset="{{ '/assets/widget-small-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
+                  <source srcset="{{ '/assets/widget-small-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
+                  <source srcset="{{ '/assets/widget-small-light.webp' | relative_url }}" type="image/webp">
+                  <img
+                    src="{{ '/assets/widget-small-light.jpg' | relative_url }}"
+                    alt="Small tanksalot home-screen widget showing the default tank's remaining liters and a Start button"
+                    width="471" height="1024" loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <div class="carousel-slide">
+                <picture>
+                  <source srcset="{{ '/assets/widget-large-dark.webp' | relative_url }}" type="image/webp" media="(prefers-color-scheme: dark)">
+                  <source srcset="{{ '/assets/widget-large-dark.jpg' | relative_url }}" media="(prefers-color-scheme: dark)">
+                  <source srcset="{{ '/assets/widget-large-light.webp' | relative_url }}" type="image/webp">
+                  <img
+                    src="{{ '/assets/widget-large-light.jpg' | relative_url }}"
+                    alt="Large tanksalot home-screen widget listing the whole tank inventory with capacity bars"
+                    width="471" height="1024" loading="lazy" decoding="async">
+                </picture>
+              </div>
+            </div>
+            <div class="carousel-dots">
+              <button class="dot" type="button" aria-label="Show the small widget" aria-current="true"></button>
+              <button class="dot" type="button" aria-label="Show the large widget" aria-current="false"></button>
+            </div>
+          </div>
         </div>
         <h3>Home-screen widgets</h3>
         <p>
@@ -178,3 +199,49 @@ description: tanksalot keeps tabs on portable oxygen tanks at home — whether y
     </div>
   </div>
 </section>
+
+<script>
+// Progressive enhancement for the widget carousel. Without JS it's still a
+// swipeable scroll-snap strip; this adds clickable dots and gentle autoplay.
+(function () {
+  document.querySelectorAll('.carousel').forEach(function (root) {
+    var track = root.querySelector('.carousel-track');
+    var slides = Array.prototype.slice.call(track.children);
+    var dots = Array.prototype.slice.call(root.querySelectorAll('.carousel-dots .dot'));
+    if (slides.length < 2) return;
+    var current = 0;
+
+    function setActive(i) {
+      current = i;
+      dots.forEach(function (d, j) { d.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }
+    function go(i) {
+      var next = (i + slides.length) % slides.length;
+      track.scrollTo({ left: track.clientWidth * next, behavior: 'smooth' });
+    }
+
+    dots.forEach(function (dot, i) { dot.addEventListener('click', function () { go(i); }); });
+
+    // Keep the active dot in sync with whichever slide is centered.
+    if ('IntersectionObserver' in window) {
+      var sync = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setActive(slides.indexOf(e.target)); });
+      }, { root: track, threshold: 0.6 });
+      slides.forEach(function (s) { sync.observe(s); });
+    }
+
+    // Gentle autoplay, paused on interaction, reduced-motion, or off-screen.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var timer = null;
+    function play() { if (!timer) timer = window.setInterval(function () { go(current + 1); }, 4500); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    ['pointerenter', 'focusin', 'touchstart'].forEach(function (ev) { root.addEventListener(ev, stop, { passive: true }); });
+    ['pointerleave', 'focusout'].forEach(function (ev) { root.addEventListener(ev, play); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.isIntersecting ? play() : stop(); });
+      }, { threshold: 0.3 }).observe(root);
+    } else { play(); }
+  });
+})();
+</script>

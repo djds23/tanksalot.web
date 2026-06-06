@@ -22,7 +22,14 @@ const A = ROOT + 'assets/';
 const SRC = ROOT + '_screenshot-src/';
 
 // Screenshots referenced by index.html (tank-detail-* is kept as a source but unused).
-const SHOTS = ['lock-screen-live-activity', 'dynamic-island', 'inventory', 'start-session'];
+// widget-small / widget-large feed the home-screen widget carousel.
+const SHOTS = [
+  'lock-screen-live-activity',
+  'inventory',
+  'start-session',
+  'widget-small',
+  'widget-large',
+];
 const SCHEMES = ['light', 'dark'];
 const SHOT_HEIGHT = 1024; // display max-height is 420px CSS -> ~840px @2x; 1024 covers 2x+ crisply.
 

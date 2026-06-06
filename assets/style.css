@@ -186,6 +186,58 @@ section.alt { background: var(--paper); border-top: 1px solid var(--rule); borde
   box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
+/* Carousel (home-screen widgets) — swipeable scroll-snap, JS adds dots/autoplay */
+.shot-carousel { margin-bottom: 16px; }
+.carousel { position: relative; }
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* old Edge */
+  border-radius: 8px;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 16px;
+}
+.carousel-slide picture { display: contents; }
+.carousel-slide img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--rule);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dots .dot[aria-current="true"] {
+  background: var(--brand);
+  transform: scale(1.15);
+}
+
 .blurb-list {
   display: grid;
   gap: 20px;
