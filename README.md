@@ -35,16 +35,19 @@ Auto-builds on push to `main` with `_config.yml` only. Enable in repo settings:
 Pages can't take a custom build command or a second config, which is why
 `_config.yml` holds the GitHub Pages settings (`baseurl: /tanksalot.web`).
 
-**Production — Cloudflare Pages** (custom domain at the root)
+**Production — Cloudflare** (custom domain `tanksalot.app` at the root)
 Configure the project with:
 
-- **Build command:** `bundle exec jekyll build --config _config.yml,_config.prod.yml`
+- **Build command:** `npm run build`
 - **Build output directory:** `_site`
 
-`_config.prod.yml` layers production overrides (`baseurl: ""`, the real `url`)
-on top of the base config; later `--config` files win. Ruby is pinned by
-`.ruby-version`. If Cloudflare doesn't auto-run `bundle install`, prefix the
-command with `bundle install &&`.
+`npm run build` runs `bundle install && bundle exec jekyll build --config
+_config.yml,_config.prod.yml`. Pointing Cloudflare at the npm script avoids its
+framework auto-detection wrapping the Ruby command in `npx` (which fails —
+`bundle` is a gem, not an npm package). `_config.prod.yml` layers production
+overrides (`baseurl: ""`, `url: https://tanksalot.app`) on top of the base
+config; later `--config` files win. Ruby is pinned by `.ruby-version`; if the
+build image doesn't pick it up, also set a `RUBY_VERSION` build variable.
 
 Local `jekyll serve` uses `_config.yml`, so it matches staging
 (<http://127.0.0.1:4000/tanksalot.web/>). To preview the production build

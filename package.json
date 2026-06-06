@@ -5,6 +5,7 @@
   "description": "Image optimization tooling for the tanksalot marketing site",
   "type": "module",
   "scripts": {
+    "build": "bundle install && bundle exec jekyll build --config _config.yml,_config.prod.yml",
     "optimize": "node bin/optimize-images.mjs"
   },
   "devDependencies": {
