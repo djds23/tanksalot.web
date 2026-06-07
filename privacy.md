@@ -26,7 +26,7 @@ The app stores tank inventory and session history locally using Apple's SwiftDat
 
 ## Notifications
 
-The app schedules **local** notifications only — for example, when a tank is predicted to be empty. These are scheduled and delivered entirely on-device. No push notification servers are involved, and no push notification identifiers leave your device.
+The app schedules **local** notifications only, for example when a tank is predicted to be empty. These are scheduled and delivered entirely on-device. No push notification servers are involved, and no push notification identifiers leave your device.
 
 ## Live Activities
 

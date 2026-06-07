@@ -10,7 +10,7 @@ permalink: /support/
 
 # Support
 
-Have a question or hit a bug? Email **<a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>**. Expect a reply within a few days — tanksalot is built and supported by one person.
+Have a question or hit a bug? Email **<a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>**. Expect a reply within a few days, since it's built and supported by one person.
 
 ## Frequently asked questions
 
